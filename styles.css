@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
+
+:root{
+    --background-color: linear-gradient(rgb(214, 202, 254), rgb(158, 129, 254));
+    --card-correct-color: white;
+    --color-purple: rgb(132, 94, 255);
+    --color-purple-light: rgb(214, 202, 254);
+    --color-border: rgb(50, 50, 50);
+}
+
+.dark{
+    --background-color: linear-gradient(rgb(62, 18, 208), rgb(56, 52, 68));
+    --card-correct-color: rgb(62, 18, 208);
+    --color-purple: rgb(214, 202, 254);
+    --color-purple-light: rgb(158, 129, 254);
+}
+*{
+    transition: all 0.5s;
+}
+body{
+    padding: 0;
+    margin: 0;
+    -webkit-perspective: 1000;
+    background: var(--background-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+}
+h1{
+    color: var(--color-purple);
+}
+
+header{
+    background-color: #000;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+.container>img{
+    width: 70px;
+}
+img{
+    width: 100px;
+    height: auto;
+}
+
+.nav-list{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+    padding-right: 50px;
+}
+li{
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+}
+li:hover{
+    cursor: pointer;
+    text-decoration:underline;
+}
+.lista{
+    font-size: 30px;
+    color: var(--color-purple);
+}
+div{
+    display: inline-block;
+}
+.area-card,
+.card,
+.face{
+    cursor: pointer;
+    width: calc(70vw / 6);
+    min-width: 100px;
+    height: calc(70vh / 4);
+}
+
+.card{
+    position: relative;
+    transform-style: preserve-3d;
+    animation: start 5s;
+}
+
+.face {
+    position: absolute;
+    backface-visibility: hidden;
+    box-shadow: inset 0 0 0 2px #000;
+    font-size: 500%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.back {
+    background-color: #000000;
+    transform: rotateY(180deg);
+}
+.top {
+    background: #000000;
+}
+
+#elementos{
+    margin-top: 50px;
+}
+
+i{
+    color: var(--color-purple);
+}
+#contador{
+    font-size: xx-large;
+    background-color: var(--color-purple);
+    border-radius: 10px;
+    border: solid 5px black;
+    width: 200px;
+}
+.botones{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+button, button:focus {
+    font-size: 17px;
+    padding: 10px 25px;
+    border-radius: 0.7rem;
+    background-image: var(--background-color);
+    border: 2px solid var(--color-border);
+    border-bottom: 5px solid var(--color-border);
+    box-shadow: 0px 1px 6px 0px var(--color-purple);
+    transform: translate(0, -3px);
+    transition: 0.2s;
+    transition-timing-function: linear;
+}
+  
+button:active {
+    transform: translate(0, 0);
+    border-bottom: 2px solid var(--color-border);
+}
+
+
+
+@keyframes start {
+    20%,
+    90% {
+      transform: rotateY(180deg);
+    }
+
+    0%,
+    100% {
+      transform: rotateY(0deg);
+    }
+}
+
+@media screen and (max-width: 622px){
+
+    .container > img{
+        width: 40px;
+    }
+    h1{
+        font-size: large;
+    }
+    .lista{
+        font-size: 16px;
+    }
+    .face{
+        font-size: 300%;
+    }
+    img{
+        width: 75px;
+    }
+    #contador{
+        font-size: medium;
+        width: 75px;
+        border: solid 2px black;
+    }
+}
+
+@media screen and (max-height: 622px) {
+    .container > img{
+        width: 40px;
+    }
+    h1{
+        font-size: large;
+    }
+    .lista{
+        font-size: 16px;
+    }
+    .face{
+        font-size: 200%;
+    }
+    img{
+        width: 50px;
+    }
+    #contador{
+        font-size: medium;
+        width: 75px;
+        border: solid 2px black;
+    }
+}

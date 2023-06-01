@@ -112,7 +112,7 @@ tablero(6);
 
       function confirmacion(){
         setTimeout(function(){
-          alert('Felicidades GANASTE, tu tiempo fue de: ' + tiempoFormateado);
+          swal("FELICIDADES GANASTE!!!", "Tardaste: " + tiempoFormateado);
           detenerContador();
           tarjetas = [];
           cantTarjeta = 0;

@@ -29,6 +29,3 @@ function pad(numero) {
   return numero < 10 ? '0' + numero : numero;
 }
 
-localStorage.setItem("tiempo",tiempo);
-
-console.log("tiempo");
